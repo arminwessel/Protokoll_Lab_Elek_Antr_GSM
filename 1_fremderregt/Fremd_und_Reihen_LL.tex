@@ -1,0 +1,25 @@
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}
+ 	   [
+ 	   width=\textwidth,
+ 	   height= 9cm,
+ 	   xlabel=Durchflutung $\Theta_E$,
+ 	   x unit =  \si{\percent},
+ 	   ylabel= {innere Spannung $U_i$},
+ 	   y unit = \si{\volt},
+ 	   grid=major,
+ 	   xmin=0,
+ 	   xmax=100,
+ 	   ymin=0,
+ 	   ymax=400,
+ 	   legend style={at={(0.1,0.9)},anchor=west}
+ 	   ]
+		\addplot[smooth,blue,line width=0.5mm] table[x=Theta_E, y=U_A, header=has colnames,col sep=comma] {\currfiledir Fremd_und_Reihen_LL_Daten.csv};
+		\addlegendentry{$U_i$}
+		\end{axis}
+	\end{tikzpicture}
+	\label{abb:fremd_reihen_LL}
+	\caption{Leerlaufkennline der Fremd- und Reihenschluss-erregten Gleichstrommaschine}
+\end{figure}

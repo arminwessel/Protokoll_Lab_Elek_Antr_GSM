@@ -1,0 +1,22 @@
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+       width=\textwidth,
+       height= 9cm,
+	   xlabel=Ausgangsstrom $I_L$,
+	   x unit =  \si{\ampere},
+	   ylabel= {Ausgangsspannung $U_A$},
+	   y unit = \si{\volt},
+	   grid=major,
+        xmin=30,
+        xmax=60,
+		ymin=0,
+		ymax=300]
+		\addplot[smooth,blue,line width=0.5mm] table[x=I_A, y=U_A, header=has colnames,col sep=comma] {\currfiledir Nebenschluss_Daten.csv};
+		\addlegendentry{$U_A$}
+		\end{axis}
+	\end{tikzpicture}
+	\label{abb:nebenschluss_aussen}
+	\caption{Äußere Kennlinie des Nebenschlussgenerators}
+\end{figure}

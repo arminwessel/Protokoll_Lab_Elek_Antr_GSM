@@ -1,10 +1,119 @@
 \section{Anhang}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla suscipit faucibus. Duis tincidunt, augue et dapibus lacinia, tortor mi viverra sapien, non ullamcorper odio risus a mauris. Maecenas at libero et mauris scelerisque sollicitudin quis sed orci. Donec congue ante felis, rutrum commodo lorem auctor quis. In consequat luctus turpis et vulputate. In sit amet rhoncus risus, porta imperdiet ex. Morbi neque lacus, consectetur quis dictum quis, pulvinar ac urna. Aliquam in dolor ut erat facilisis fringilla. Sed molestie commodo est.
 
-Mauris sit amet eros sem. Donec quam massa, luctus ut nunc at, dignissim ornare augue. Aenean sagittis consequat nulla quis facilisis. Duis ultricies laoreet dui, ut condimentum arcu sodales sit amet. Nullam efficitur tellus vel faucibus scelerisque. Duis varius felis vitae eros maximus vestibulum. In porttitor pellentesque tellus, vel placerat orci. Phasellus consequat libero purus, sit amet semper ipsum fermentum non. Quisque rutrum sapien lectus, at faucibus eros egestas eget. Nulla id nisi tortor. Morbi porttitor interdum porta.
+\begin{table}[!ht]
+    \centering% Tabelle zu Fremderregt_Leerlauf.csv
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \bfseries $I_E [A]$ & \bfseries $U_{A1} [V]$ & \bfseries $U_{A2} [V]$ 
+    \csvreader[head to column names]{1_fremderregt/Fremderregt_Leerlauf_Table.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur Leerlaufkennlinie in Abb. \ref{abb:fremd_reihen_LL}. Die Messwerte in der Spalte $U_{A1}$ wurden bei stromloser Reihenschlusswicklung gemessen, die in $U_{A2}$ bei einem Reihenschluss-Erregerstrom von \SI{40}{\ampere}}
+    \label{tab:Fremderregt_Leerlauf}
+\end{table}
 
-Morbi porta dolor metus, eget hendrerit justo ullamcorper ut. Vivamus commodo, arcu quis finibus eleifend, odio sem dignissim orci, nec pellentesque sapien metus at tortor. Sed dictum lectus suscipit imperdiet ultrices. Proin tellus neque, ornare sed mattis vel, faucibus at turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet condimentum risus, nec lobortis sem. Donec molestie vel dui in egestas. Quisque tellus nisl, suscipit at viverra eget, aliquam eu est. Nam cursus nunc ultrices, pulvinar lorem vel, ullamcorper ante. Nunc sed dolor nec tellus commodo vehicula.
+\begin{table}[h!]
+    \centering% Tabelle zu Fremderregt_Belastung.csv
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \bfseries $I_E [A]$ & \bfseries $U_A [V]$ & \bfseries $I_A [A]$ & \bfseries $U_I [V]$ & \bfseries $R_A [\Omega]$ 
+    \csvreader[head to column names]{1_fremderregt/Fremderregt_Belastung.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii& \csvcoliv& \csvcolv}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur Belastungskennlinie in Abb. \ref{abb:fremd_LL_BL_Innen}}
+    \label{tab:Fremderregt_Belastung}
+\end{table}
 
-Phasellus id arcu sed enim sodales fringilla at nec metus. Mauris vel nibh et nibh bibendum gravida ut at metus. Sed bibendum, dui nec congue sodales, quam urna gravida lorem, sed vestibulum velit mi nec lorem. Quisque placerat congue ullamcorper. Vestibulum sollicitudin enim at risus gravida suscipit. Maecenas blandit consectetur enim, sed maximus diam dignissim at. Nam venenatis erat eleifend velit posuere accumsan. Nunc bibendum felis ac elit posuere venenatis. Suspendisse aliquet quam magna. Aenean quis ante posuere, interdum quam ut, accumsan ex.
+\begin{table}[!ht]
+    \centering% Tabelle zu Fremderregt_Aussen.csv
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \bfseries $I_A [A]$ & \bfseries $U_A [V]$ & \bfseries $U_I [V]$ & \bfseries $R_A [\Omega]$ & \bfseries $I_E [A]$ 
+    \csvreader[head to column names]{1_fremderregt/Fremderregt_Aussen.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii& \csvcoliv& \csvcolv}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur äußeren Kennlinie in Abb. \ref{abb:fremd_aussen_regulier}}
+    \label{tab:Fremderregt_Aussen}
+\end{table}
 
-Fusce molestie lacinia maximus. Suspendisse eget ex nec orci ullamcorper euismod auctor sed dui. Vivamus iaculis egestas tellus non consectetur. Sed dapibus vitae felis in gravida. Donec sapien sem, euismod et tincidunt egestas, bibendum eget odio. Nulla sed sapien efficitur, mattis metus ac, aliquam leo. Integer consequat bibendum turpis, at rhoncus purus sodales eget. Aenean quis accumsan velit.
+\begin{table}[!ht]
+    \centering% Tabelle zu Fremderregt_Regulier.csv
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \bfseries $I_A [A]$ & \bfseries $I_E [A]$ & \bfseries $U_A [V]$ 
+    \csvreader[head to column names]{1_fremderregt/Fremderregt_Regulier.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur Regulierkennlinie in Abb. \ref{abb:fremd_aussen_regulier}}
+    \label{tab:Fremderregt_Regulier}
+\end{table}
+
+\begin{table}[!ht]
+    \centering% Tabelle zu Nebenschluss_Daten.csv
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \bfseries $I_L [A]$ & \bfseries $U_A [V]$ & \bfseries $I_E [A]$ 
+    \csvreader[head to column names]{2_nebenschluss/Nebenschluss_Daten.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur äußeren Kennlinie in Abb. \ref{abb:nebenschluss_aussen}}
+    \label{tab:Nebenschluss_Daten}
+\end{table}
+
+\begin{table}[!ht]
+    \centering% Tabelle zu Reihenschluss_Daten.csv
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \bfseries $n [U/min]$ & \bfseries $n_p [1]$ & \bfseries $I_A [A]$ & \bfseries $U_A [V]$ & \bfseries $U_I [V]$ & \bfseries $R_A [\Omega]$ & \bfseries $R_D [\Omega]$ 
+    \csvreader[head to column names]{3_reihenschluss/Reihenschluss_Daten.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii& \csvcoliv& \csvcolv& \csvcolvi& \csvcolvii}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zum Bremsversuch in Abb. \ref{abb:reihenschluss_aussen}}
+    \label{tab:Reihenschluss_Daten}
+\end{table}
+
+\begin{table}[!ht]
+    \centering% Tabelle zu Verbund_ueber.csv
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \bfseries $U_A [V]$ & \bfseries $I_A [A]$ & \bfseries $I_E [A]$ 
+    \csvreader[head to column names]{4_verbund/Verbund_ueber.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur äußeren Kennlinie in Abb. \ref{abb:verbund_kennlinien}: überkompoundiert}
+    \label{tab:Verbund_ueber}
+\end{table}
+
+\begin{table}[!ht]
+    \centering% Tabelle zu Verbund_gegen.csv
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \bfseries $U_A [V]$ & \bfseries $I_A [A]$ & \bfseries $I_E [A]$ 
+    \csvreader[head to column names]{4_verbund/Verbund_gegen.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur äußeren Kennlinie in Abb. \ref{abb:verbund_kennlinien}: gegenkompoundiert}
+    \label{tab:Verbund_gegen}
+\end{table}
+
+\begin{table}[!ht]
+    \centering% Tabelle zu Verbund_normal.csv
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \bfseries $U_A [V]$ & \bfseries $I_A [A]$ & \bfseries $I_E [A]$ 
+    \csvreader[head to column names]{4_verbund/Verbund_normal.csv}{}
+    {\\\hline\csvcoli& \csvcolii& \csvcoliii}
+    \\\hline
+    \end{tabular}
+    \caption{Messwerte zur äußeren Kennlinie in Abb. \ref{abb:verbund_kennlinien}: kompoundiert}
+    \label{tab:Verbund_normal}
+\end{table}
+

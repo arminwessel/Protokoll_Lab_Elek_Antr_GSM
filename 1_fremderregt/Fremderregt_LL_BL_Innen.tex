@@ -1,0 +1,29 @@
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+       width=\textwidth,
+       height= 12cm,
+	   xlabel=Erregerstrom $I_E$,
+	   x unit =  \si{\ampere},
+	   ylabel= {Spannung},
+	   y unit = \si{\volt},
+	   grid=major,
+        xmin=0,
+        xmax=1.8,
+		ymin=0,
+		ymax=400,
+		legend style={
+            at={(0.1,0.9)},
+            anchor=west}]
+		\addplot[smooth,blue,line width=0.5mm] table[x=I_E, y=U_A, header=has colnames,col sep=comma] {\currfiledir Fremderregt_Leerlauf.csv};
+		\addlegendentry{$U_{A}$}
+		\addplot[smooth,red,line width=0.5mm] table[x=I_E, y=U_I, header=has colnames,col sep=comma] {\currfiledir Fremderregt_Belastung.csv};
+		\addlegendentry{$U_i$}
+		\addplot[smooth,green,line width=0.5mm] table[x=I_E, y=U_A, header=has colnames,col sep=comma] {\currfiledir Fremderregt_Belastung.csv};
+		\addlegendentry{$U_A$}
+		\end{axis}
+	\end{tikzpicture}
+	\label{abb:fremd_LL_BL_Innen}
+	\caption{Fremderregte Gleichstrommaschine}
+\end{figure}

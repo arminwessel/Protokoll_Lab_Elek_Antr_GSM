@@ -1,0 +1,30 @@
+\begin{figure}
+    \centering
+    \begin{circuitikz}
+
+\draw[fill] (-0.25, 0.95) rectangle (0.25, -0.95);
+\draw[fill=white] (0, 0) circle (0.8);
+\draw[->] (0, -0.7) -- (0, 0.7) node[anchor=north west] {$I_\mathrm{A}$};
+\draw[->] (0.7, 0) -- (-0.7, 0) node[anchor=north west] {$\Theta_\mathrm{E}$};
+\draw[->] (170:1) arc[radius=1, start angle=170, end angle=120] node[anchor=south east] {$n$};
+\draw[->] (-170:1) arc[radius=1, start angle=-170, end angle=-120] node[anchor=north east] {$M$};
+
+\draw (0.25, 0.8) node[anchor=south west] {A1};
+\draw (0.25, -0.8) node[anchor=north west] {A2};
+
+\draw (0, -0.95) -- (-0.5, -0.95) -- (-0.5, -3.5) -- (0, -3.5) node[anchor=west, inner sep=10pt] {B1}
+to[inductor] (0, -2) node[anchor=west, inner sep=10pt] {B2}
+-- (0, -1.5) -- (1.5, -1.5) -- (1.5, 0) node[anchor=south, inner sep=10pt] {D2} to[L] (3, 0) node[anchor=south, inner sep=10pt] {D1} to[short, -*] (4.5, 0) to[short, -o] (5.5, 0);
+\draw (0, 0.95) -- (0, 3) to[esource, l_=$I_\mathrm{A}$, -*] (4.5, 3) to[short, -o] (5.5, 3);
+\draw (4.5, 3) to[esource] (4.5, 0);
+\draw (4.5, 1.5) node {V};
+\draw (2.25, 3) node {A};
+\draw[->] (5.5, 2.6) -- (5.5, 0.4) node[midway, anchor=west] {$U_\mathrm{A}$};
+
+% Lastwiderstand
+\draw (5.5, 3) to[short, o-] (7, 3) to[tgeneric, l=$R_\mathrm{L}$] (7, 0) to[short, -o] (5.5, 0);
+
+\end{circuitikz}
+    \caption{Messschaltung Reihenschluss}
+    \label{abb:reihen_schaltung}
+\end{figure}

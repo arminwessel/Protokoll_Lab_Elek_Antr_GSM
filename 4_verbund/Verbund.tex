@@ -1,0 +1,33 @@
+ \begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+       width=\textwidth,
+       height= 12cm,
+	   xlabel=Ankerstrom $I_A$,
+	   x unit =  \si{\ampere},
+	   ylabel= {Spannung},
+	   y unit = \si{\volt},
+	   grid=major,
+        xmin=0,
+        xmax=70,
+		ymin=0,
+		ymax=400,
+		legend style={
+            at={(0.95,0.3)},
+            anchor=east}]
+		\addplot[smooth,blue,line width=0.5mm] table[x=I_A, y=U_A, header=has colnames,col sep=comma] {\currfiledir Verbund_ueber.csv};
+		\addlegendentry{überkompoundiert}
+		\addplot[dashed,blue,line width=0.5mm, forget plot] table[x=I_A, y=U_I, header=has colnames,col sep=semicolon] {\currfiledir Verbund_ueber_inner.csv};
+		\addplot[smooth,red,line width=0.5mm] table[x=I_A, y=U_A, header=has colnames,col sep=comma] {\currfiledir Verbund_normal.csv};
+		\addlegendentry{kompoundiert}
+		\addplot[dashed,red,line width=0.5mm, forget plot] table[x=I_A, y=U_I, header=has colnames,col sep=semicolon] {\currfiledir Verbund_normal_inner.csv};
+		\addplot[smooth,green,line width=0.5mm] table[x=I_A, y=U_A, header=has colnames,col sep=comma] {\currfiledir Verbund_gegen.csv};
+		\addlegendentry{gegenkompoundiert}
+		\addplot[dashed,green,line width=0.5mm] table[x=I_A, y=U_I, header=has colnames,col sep=semicolon] {\currfiledir Verbund_gegen_inner.csv};
+		
+		\end{axis}
+	\end{tikzpicture}
+	\label{abb:verbund_kennlinien}
+	\caption{Verbundgleichstromgenerator: Äußere Kennlinien (durchgezogen) sowie innere Kennlinien (strichliert).}
+\end{figure}

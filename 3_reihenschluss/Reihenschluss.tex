@@ -1,0 +1,31 @@
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+       width=\textwidth,
+       height= 9cm,
+	   xlabel=bezogene Drehzahl $n$,
+	   x unit =  \si{\per \minute},
+	   ylabel= {bezogene Kenngröße},
+	   %y unit = \si{},
+	   grid=major,
+        xmin=0.4,
+        xmax=1,
+		ymin=0,
+		ymax=1,
+		legend style={
+            at={(0.1,0.8)},
+            anchor=west}]
+		\addplot[smooth,blue,line width=0.5mm] table[x=n, y=u_A, header=has colnames,col sep=comma] {\currfiledir Reihenschluss_Bremsversuch.csv};
+		\addlegendentry{$u_A$}
+		\addplot[smooth,red,line width=0.5mm] table[x=n, y=i_A, header=has colnames,col sep=comma] {\currfiledir Reihenschluss_Bremsversuch.csv};
+		\addlegendentry{$i_A$}
+		\addplot[smooth,green,line width=0.5mm] table[x=n, y=p_B, header=has colnames,col sep=comma] {\currfiledir Reihenschluss_Bremsversuch.csv};
+		\addlegendentry{$p_B$}
+		\addplot[smooth,black,line width=0.5mm] table[x=n, y=m_B, header=has colnames,col sep=comma] {\currfiledir Reihenschluss_Bremsversuch.csv};
+		\addlegendentry{$m_B$}
+		\end{axis}
+	\end{tikzpicture}
+	\label{abb:reihenschluss_aussen}
+	\caption{Reihenschluss Gleichstrommaschine: Bremsversuch}
+\end{figure}
